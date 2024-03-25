@@ -1,0 +1,77 @@
+---
+title: "Understanding Food Insecurity during COVID 19"
+subtitle: "DATA 550 Final Project 2: R Markdwon"
+author: "Afia Tyus"
+date: "`r format(Sys.Date(), '%m- %d-%y')`"
+output: pdf_document
+---
+
+# Introduction
+
+This data is a compilation of the US Census Beurau’s pulse survey on food sufficiency for households during COVID (from April 2020 to August of 2021, with data collected weekly). The dataset includes subfields on race, education, incomes, etc. and helps to provide a picture of food insecurity across the nation within and across demographic groups. The raw data contains 40 variables and greater than 300,000 observations. Food security (or lack thereof) is measured by 5 levels: enough of the food you wanted to eat, enough food but not always what you wanted to eat, sometimes not enough to eat, often not enough to eat, and did not report. For the purposes of this analysis, food insecurity is considered to be all individuals who cannot meet their dietary needs each week (a combination of those who often and sometimes do not have enough to eat).
+
+The objective of this report is to better understand the distribution of food insecurity across the US by demographic groupings. In addition to understanding overall rates of food insecurity is analyzing how food insecurity prevalence differed over the course of the pandemic and if any spikes coincided with broader national events.
+
+
+```{r, load-data, echo= FALSE}
+library(pacman)
+p_load(tidyverse, ggplot2,knitr, labelled, gtsummary)
+
+opts_chunk$set(
+  echo = FALSE, warning = FALSE, message = FALSE
+)
+
+here::i_am("RMarkdown_modularized_TYUS.Rmd")
+cleaned_data <- read.csv(file = here::here("cleaned_data/Food_Insecurity_cleaned.csv"))
+
+```
+
+
+
+```{r, loading-table1}
+
+table1 <- readRDS(
+  file = here::here("tables/table1.rds")
+)
+table1
+
+```
+Table: Distribution of food insecurity rates and overall numbers by reported race. These are average numbers across 36 weeks between April of 2020 and August of 2021.
+
+
+```{r, loading-table2}
+
+table2 <- readRDS(
+  file = here::here("tables/table2.rds")
+)
+
+table2
+
+```
+Table: Distribution of food insecurity rates and overall numbers by age group. These are average numbers across 36 weeks between April of 2020 and August of 2021.
+
+
+
+```{r, summary-by-age, fig.cap="Distribution of food insecurity rates by age groups"}
+
+graph1 <- readRDS(
+  file = here::here("graphs/graph1.rds")
+)
+
+graph1
+
+```
+
+```{r, week-v-race, fig.cap= "Average food insecurity rate across the US during the COVID-19 pandemic"}
+
+graph2 <- readRDS(
+  file = here::here("graphs/graph2.rds")
+)
+
+graph2
+
+```
+
+
+
+
