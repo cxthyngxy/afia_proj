@@ -1,6 +1,7 @@
-Final Project Git Repository : Food Insecurity During COVID 19
+Food Insecurity During COVID 19
 ================
 Afia Tyus
+DATA 550 - Final Project Git Repository
 
 ## Initial code description
 
