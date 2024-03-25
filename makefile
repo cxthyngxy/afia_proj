@@ -22,4 +22,4 @@ final_report: RMarkdown_modularized_TYUS.Rmd cleandata table1 table2 graph1 grap
 
 .PHONY: cleanoutputs
 cleanoutputs:
-	rm -f tables/*.rds && rm -f RMarkdown_modularized_TYUS.pdf && rm -f graphs/*.rds && rm -f cleaned_data/*.csv
+	rm -f tables/*.rds && rm -f RMarkdown_modularized_TYUS.pdf && rm -f graphs/*.rds && rm -f graphs/*.png && rm -f cleaned_data/Food_Insecurity_cleaned.csv
