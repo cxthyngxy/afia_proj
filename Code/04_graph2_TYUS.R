@@ -1,3 +1,4 @@
+install.packages("pacman")
 library(pacman)
 p_load(tidyverse, ggplot2,knitr, labelled, gtsummary)
 
