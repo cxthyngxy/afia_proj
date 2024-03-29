@@ -14,7 +14,7 @@ The objective of this report is to better understand the distribution of food in
 
 
 ```{r, load-data, echo= FALSE}
-install.packages("pacman")
+
 library(pacman)
 p_load(tidyverse, ggplot2,knitr, labelled, gtsummary)
 
