@@ -5,6 +5,10 @@ DATA 550 - Final Project Git Repository
 
 ## Initial code description
 
+`code/06_restore_TYUS.R`
+  - synchronizes the package environment
+  - run "make install" to synchronize BEFORE running other code
+
 `code/00_cleaningdata_TYUS.R`
 Cleans the original data set
   - renames columns
@@ -37,3 +41,6 @@ Cleans the original data set
   - runs the full modularized report
   - reads in the clean data
   - reads in the outputs (tables 1 and 2 and graphs 1 and 2)
+
+
+

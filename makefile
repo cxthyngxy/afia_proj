@@ -15,10 +15,11 @@ graph1: code/03_graph1_TYUS.R cleandata
 graph2: code/04_graph2_TYUS.R cleandata
 	Rscript code/04_graph2_TYUS.R
 
-
 final_report: RMarkdown_modularized_TYUS.Rmd cleandata table1 table2 graph1 graph2
 	Rscript code/05_renderreport_TYUS.R
 
+install: Code/06_restore_TYUS.R
+	Rscript Code/06_restore_TYUS.R
 
 .PHONY: cleanoutputs
 cleanoutputs:
