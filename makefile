@@ -18,8 +18,9 @@ graph2: code/04_graph2_TYUS.R cleandata
 final_report: RMarkdown_modularized_TYUS.Rmd cleandata table1 table2 graph1 graph2
 	Rscript code/05_renderreport_TYUS.R
 
-install: Code/06_restore_TYUS.R
-	Rscript Code/06_restore_TYUS.R
+.PHONY: install
+install:
+	Rscript -e "renv::restore(prompt=FALSE)"
 
 .PHONY: cleanoutputs
 cleanoutputs:
