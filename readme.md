@@ -43,4 +43,9 @@ Cleans the original data set
   - reads in the outputs (tables 1 and 2 and graphs 1 and 2)
 
 
+How to build the docker image:
+  - run `make project_image` in order to create the image within the container
+
+How to create the report:
+  - run `make final_report/build.pdf` in order to create the final report within the container
 

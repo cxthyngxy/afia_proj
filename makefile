@@ -1,4 +1,5 @@
 
+# REPORT ASSOCIATED RULES
 
 cleandata: code/00_cleaningdata_TYUS.R
 	Rscript code/00_cleaningdata_TYUS.R
@@ -25,3 +26,23 @@ install:
 .PHONY: cleanoutputs
 cleanoutputs:
 	rm -f tables/*.rds && rm -f RMarkdown_modularized_TYUS.pdf && rm -f graphs/*.rds && rm -f graphs/*.png && rm -f cleaned_data/Food_Insecurity_cleaned.csv
+	
+# DOCKER ASSOCIATED RULES
+
+PROJECTFILES = RMarkdown_modularized_TYUS.Rmd code/00_cleaningdata_TYUS.R code/01_table1.R code/02_table2_TYUS.R code/03_graph1_TYUS.R code/04_graph2_TYUS.R code/05_renderreport_TYUS.R
+RENVFILES = renv.lock renv/activate.R renv/settings.json
+
+
+# RULE TO BUILD IMAGE
+project_image: Dockerfile $(PROJECTFILES) $(RENVFILES)
+	docker build -t project_v1
+	touch $@
+
+# RULE TO BUILD THE REPORT AUTOMATICALLY IN THE CONTAINER
+final_report/build.pdf: project_v1
+	docker run -v “/$$(pwd)/Final_Project”:/final_project project_v1
+	
+
+
+	
+	
