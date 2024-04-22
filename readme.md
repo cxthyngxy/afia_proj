@@ -5,9 +5,9 @@ DATA 550 - Final Project Git Repository
 
 ## Initial code description
 
-`code/06_restore_TYUS.R`
+`make install`
   - synchronizes the package environment
-  - run "make install" to synchronize BEFORE running other code
+  - run "make install" to synchronize the package environment BEFORE running other code
 
 `code/00_cleaningdata_TYUS.R`
 Cleans the original data set
@@ -44,8 +44,8 @@ Cleans the original data set
 
 
 How to build the docker image:
-  - run `make project_image` in order to create the image within the container
+  - run `make project_image` in order to create the image within the container in a Mac/Linux-OS-specific target
 
-How to create the report:
+How to create the containerized report:
   - run `make final_report/build.pdf` in order to create the final report within the container
 

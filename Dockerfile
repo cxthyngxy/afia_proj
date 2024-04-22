@@ -30,7 +30,7 @@ COPY RMarkdown_modularized_TYUS.Rmd .
 RUN mkdir code
 RUN mkdir Graphs
 RUN mkdir Raw_Data
-RUN mkdir Tables
+RUN mkdir tables
 RUN mkdir Cleaned_data
 RUN mkdir final_report
 
@@ -39,9 +39,6 @@ COPY Raw_Data/Food_Insecurity.csv Raw_Data
 COPY Code code
 
 
-CMD make final_report && mv RMarkdown_modularized_TYUS.pdf final_report
+CMD make final_report && mv RMarkdown_modularized_TYUS.html final_report
 
 
-# The Makefile contains a rule that performs a docker run command that mounts a 
-# local directory called report to somewhere in the container to retrieve the 
-# output of the report.
