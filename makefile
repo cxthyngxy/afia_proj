@@ -42,7 +42,8 @@ project_image: Dockerfile $(PROJECTFILES) $(RENVFILES)
 final_report/build.html: project_image
 	docker run -v "/$$(pwd)"/Final_Project:/final_project project_v1
 	
-
+final_report/build2: project_image
+	docker run -v "/$$(pwd)"/Final_Project:/final_project fiatyus/project_v1
 
 
 	
