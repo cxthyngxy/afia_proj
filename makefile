@@ -35,14 +35,14 @@ RENVFILES = renv.lock renv/activate.R renv/settings.json
 
 # RULE TO BUILD IMAGE
 project_image: Dockerfile $(PROJECTFILES) $(RENVFILES)
-	docker build -t project_v1 . 
+	docker build -t fiatyus/project_v1 . 
 	touch $@
 
 # RULE TO BUILD THE REPORT AUTOMATICALLY IN THE CONTAINER
 final_report/build.html: project_image
 	docker run -v "/$$(pwd)"/Final_Project:/final_project project_v1
 	
-final_report/build2: project_image
+final_report/build2: 
 	docker run -v "/$$(pwd)"/Final_Project:/final_project fiatyus/project_v1
 
 
