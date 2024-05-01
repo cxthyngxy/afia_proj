@@ -23,9 +23,9 @@ FROM rocker/rstudio
 WORKDIR /home/rstudio/final_project
 COPY --from=base /home/rstudio/final_project . 
 
+
 COPY makefile . 
 COPY RMarkdown_modularized_TYUS.Rmd .
-
 
 RUN mkdir code
 RUN mkdir Graphs
@@ -38,7 +38,6 @@ RUN mkdir final_report
 COPY Raw_Data/Food_Insecurity.csv Raw_Data
 COPY Code code
 
-
-CMD make final_report && mv RMarkdown_modularized_TYUS.html final_report
+ENTRYPOINT make final_report && mv RMarkdown_modularized_TYUS.html final_report/
 
 
