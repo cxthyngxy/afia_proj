@@ -43,7 +43,7 @@ final_report/build.html: project_image
 	docker run -v "/$$(pwd)Final_Project":/final_project project_v1
 
 final_report/build2:
-	docker run -v "/$$(pwd)"/final_report:/final_project/final_report fiatyus/final_v1
+	docker run -v "$$(pwd)"/final_report:/home/rstudio/final_project/final_report fiatyus/final_v1
 
 
 
