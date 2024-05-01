@@ -47,6 +47,6 @@ How to build the docker image:
   - run `make project_image` in order to create the image within the container in a Mac/Linux-OS-specific target
 
 How to create the containerized report:
-  - locally - run `make final_report/build.html` in order to create the final report within the container
-  - via dockerhub - run `make final_report/build2`in order to create the final report within the container
+  - via dockerhub - run `make final_report/build.html` in order to create the final report within the container
+
 
